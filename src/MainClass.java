@@ -24,7 +24,7 @@ public class MainClass {
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
-
+        System.out.println("aloo luquita");
         //conect.NovaConexao();
         //conect.addUsuario();
 
