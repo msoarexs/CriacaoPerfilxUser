@@ -1,3 +1,4 @@
+
 import javax.naming.AuthenticationException;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
@@ -7,7 +8,7 @@ import java.util.Properties;
 
 public class Conexao {
     DirContext conexao;
-    public void NovaConexao(){
+    public void NovaConexao() throws MainClass{
         Properties env;
         env = new Properties();
         env.put(Context.INITIAL_CONTEXT_FACTORY,"com.sun.jndi.ldap.LdapCtxFactory");
@@ -48,7 +49,7 @@ public class Conexao {
 
         attributos.put(attributo);
 
-        attributos.put("cn", "Fabiano"  );
+        attributos.put("cn", toString());
         try {
             conexao.createSubcontext("cn=Luis,ou=im,ou=ca,o=com", attributos);
         } catch (NamingException e) {
