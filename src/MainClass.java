@@ -20,7 +20,7 @@ public class MainClass extends Throwable {
         //Arraylist
         List<UserxPerfil> lista = new ArrayList<UserxPerfil>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(arquivo)) ) {
+        try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha = br.readLine();
             linha = br.readLine();
 
@@ -35,11 +35,11 @@ public class MainClass extends Throwable {
 
                 linha = br.readLine();
             }
-            /*
-            System.out.println("Dados Planilha: ");
+
+            //System.out.println("Dados Planilha: ");
             for (UserxPerfil u : lista){
                 System.out.println(u);
-            }*/
+            }
 
         }
         catch (IOException e) {

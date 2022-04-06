@@ -42,16 +42,16 @@ public class Conexao {
             System.out.println(attr.get("cn"));
         }
     }
-    public void addUsuario(){
+    public void addUsuario() {
         Attributes attributos = new BasicAttributes();
         Attribute attributo = new BasicAttribute("objectClass");
         attributo.add("inetOrgPerson");
 
         attributos.put(attributo);
 
-        attributos.put("cn", toString());
+        attributos.put("cn", "");
         try {
-            conexao.createSubcontext("cn=Luis,ou=im,ou=ca,o=com", attributos);
+            conexao.createSubcontext("", attributos);
         } catch (NamingException e) {
             e.printStackTrace();
         }
