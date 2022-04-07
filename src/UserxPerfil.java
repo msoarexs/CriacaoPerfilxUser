@@ -1,5 +1,3 @@
-
-
 import java.io.Serializable;
 
 public class UserxPerfil extends Throwable implements Serializable {

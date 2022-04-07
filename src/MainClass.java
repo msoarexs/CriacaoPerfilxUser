@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class MainClass extends Throwable {
+public class MainClass {
 
     public static void main(String[] args) {
 
@@ -15,6 +15,7 @@ public class MainClass extends Throwable {
         //Arraylist
         List<UserxPerfil> lista = new ArrayList<UserxPerfil>();
 
+        MainClass path = new MainClass();
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha = br.readLine();
             linha = br.readLine();
@@ -23,29 +24,24 @@ public class MainClass extends Throwable {
             while (linha != null) {
                 String[] vetor = linha.split(",");
                 String nome = vetor[0];
+                nome = nome.replace(" ", ".");
                 String perfil = vetor[1];
 
-                UserxPerfil dados = new UserxPerfil(nome,perfil);
+                UserxPerfil dados = new UserxPerfil(nome, perfil);
                 lista.add(dados);
 
                 linha = br.readLine();
             }
-
+                BatFile arquiv = new BatFile();
+                arquiv.escreveArquivo(lista);
             //System.out.println("Dados Planilha: ");
-            for (UserxPerfil u : lista){
+            for (UserxPerfil u : lista) {
                 System.out.println(u);
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("!!ERRO!!" + e.getMessage());
         }
 
-    }
-    public static HashMap<String, String> addHashMap(List<UserxPerfil> users) {
-        HashMap<String, String> map = new HashMap<>();
-        for (UserxPerfil user : users) {
-            map.put(user.getLogin().toLowerCase(), user.getRole());
-        }
-        return map;
+
     }
 }
