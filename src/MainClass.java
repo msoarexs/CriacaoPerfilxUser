@@ -3,16 +3,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class MainClass extends Throwable {
 
     public static void main(String[] args) {
-        //Conexao com a base de dados do IDM
-        Conexao conect = new Conexao();
 
         //Leitura de arquivo
         String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\PerfilVsUsersTest - Copia.csv";
@@ -40,10 +35,17 @@ public class MainClass extends Throwable {
             for (UserxPerfil u : lista){
                 System.out.println(u);
             }
-
         }
         catch (IOException e) {
             System.out.println("!!ERRO!!" + e.getMessage());
         }
+
+    }
+    public static HashMap<String, String> addHashMap(List<UserxPerfil> users) {
+        HashMap<String, String> map = new HashMap<>();
+        for (UserxPerfil user : users) {
+            map.put(user.getLogin().toLowerCase(), user.getRole());
+        }
+        return map;
     }
 }

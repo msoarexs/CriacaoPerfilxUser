@@ -5,24 +5,24 @@ import java.io.Serializable;
 public class UserxPerfil extends Throwable implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String nome;
+    private String login;
     private String role;
 
     public UserxPerfil(){
 
     }
 
-    public UserxPerfil(String nome, String role) {
-        this.nome = nome;
+    public UserxPerfil(String login, String role) {
+        this.login = login;
         this.role = role;
     }
 
-    public String getNome() {
-        return nome;
+    public String getLogin() {
+        return login;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setLogin(String nome) {
+        this.login = login;
     }
 
     public String getRole() {
@@ -35,7 +35,7 @@ public class UserxPerfil extends Throwable implements Serializable {
 
     @Override
     public String toString() {
-        return "NOME='" + nome + '\'' +
+        return "NOME='" + login + '\'' +
                 ", ROLE='" + role + '\'' +
                 '}';
     }
