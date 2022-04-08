@@ -1,21 +1,17 @@
 import javax.naming.NamingException;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
-public class MainClass {
+public class MainClass extends UserxPerfil {
 
     public static void main(String[] args) {
 
-        //Leitura de arquivo
+        //Local de arquivo para uma variavel
         String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\PerfilVsUsersTest - Copia.csv";
 
-        //Arraylist
+        //Arraylist Criando a lista
         List<UserxPerfil> lista = new ArrayList<UserxPerfil>();
 
-        MainClass path = new MainClass();
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha = br.readLine();
             linha = br.readLine();
@@ -23,25 +19,25 @@ public class MainClass {
             //Lendo a planilha e separando Nome de Role
             while (linha != null) {
                 String[] vetor = linha.split(",");
-                String nome = vetor[0];
-                nome = nome.replace(" ", ".");
-                String perfil = vetor[1];
+                String nome = vetor[0];                         //Separa o login das roles
+                nome = nome.replace(" ", "."); //Trata os dados criando um login
+                String perfil = vetor[1];                       //Separa o login das roles
 
                 UserxPerfil dados = new UserxPerfil(nome, perfil);
-                lista.add(dados);
 
+                lista.add(dados);
                 linha = br.readLine();
             }
-                BatFile arquiv = new BatFile();
-                arquiv.escreveArquivo(lista);
-            //System.out.println("Dados Planilha: ");
-            for (UserxPerfil u : lista) {
-                System.out.println(u);
-            }
+            //Cria o arquivo bat para a carga de User x Perfil
+            BatFile esc = new BatFile();
+            esc.writeFile(lista);
+
+            //Imprime os dados da planilha
+            //for (UserxPerfil u : lista) {
+            //    System.out.println(u);
+            //}
         } catch (IOException e) {
             System.out.println("!!ERRO!!" + e.getMessage());
         }
-
-
     }
 }
