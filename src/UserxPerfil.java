@@ -33,6 +33,6 @@ public class UserxPerfil extends Throwable implements Serializable {
 
     @Override
     public String toString() {
-        return "NOME='" + login + '\'' + ", ROLE='" + role + '\'' ;
+        return "LOGIN='" + login + '\'' + ", ROLE='" + role + '\'' ;
     }
 }

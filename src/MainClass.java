@@ -33,9 +33,9 @@ public class MainClass extends UserxPerfil {
             esc.writeFile(lista);
 
             //Imprime os dados da planilha
-            //for (UserxPerfil u : lista) {
-            //    System.out.println(u);
-            //}
+            for (UserxPerfil u : lista) {
+                System.out.println(u);
+            }
         } catch (IOException e) {
             System.out.println("!!ERRO!!" + e.getMessage());
         }

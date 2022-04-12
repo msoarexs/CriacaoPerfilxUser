@@ -8,7 +8,7 @@ public class BatFile {
 
 
     public void writeFile(List<UserxPerfil> listas) {
-        String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\luquitaLindinho.bat";
+        String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\etautil.csv";
         try (BufferedWriter br = new BufferedWriter(new FileWriter(arquivo))) {
             for (UserxPerfil u : listas) {
                 arquivo = "C:\\Users\\Mateus Soare\\Desktop\\PerfilVsUsers_etautil.csv";
@@ -22,3 +22,6 @@ public class BatFile {
         }
     }
 }
+
+//Gerar arquivo de criação de usuário
+//bulkloader
