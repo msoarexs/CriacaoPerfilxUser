@@ -15,7 +15,7 @@ public class BulkLoader {
                 String[] vet = nome.split(" ");
                 String first = vet[0];
                 String last = vet[1];
-                br.write( "\n"+"create,"+u.getLogin()+","+u.getLogin()+","+nome+","+first+","+last+","+u.getLogin().toLowerCase()+"@nicolasec.com");
+                br.write( "\n"+"create,"+u.getLogin()+","+u.getLogin().toLowerCase()+","+nome.toLowerCase()+","+first.toLowerCase()+","+last.toLowerCase()+","+u.getLogin().toLowerCase()+"@nicolasec.com");
 
             }
         } catch (IOException e) {
