@@ -12,7 +12,10 @@ public class BulkLoader {
             br.write("action,%USER_ID%,%LOGIN_ID%,%FULL_NAME%,%LAST_NAME%,%FIRST_NAME%,%MAIL%");
             for (UserxPerfil u : listaa) {
                 nome= u.getLogin().replace("."," ");
-                br.write( "\n"+"create,"+u.getLogin()+","+u.getLogin()+","+nome+",n/a,n/a,"+u.getLogin().toLowerCase()+"@nicolasec.com");
+                String[] vet = nome.split(" ");
+                String first = vet[0];
+                String last = vet[1];
+                br.write( "\n"+"create,"+u.getLogin()+","+u.getLogin()+","+nome+","+first+","+last+","+u.getLogin().toLowerCase()+"@nicolasec.com");
 
             }
         } catch (IOException e) {
