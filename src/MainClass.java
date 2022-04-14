@@ -31,6 +31,8 @@ public class MainClass extends UserxPerfil {
             //Cria o arquivo bat para a carga de User x Perfil
             BatFile esc = new BatFile();
             esc.writeFile(lista);
+            BulkLoader bl = new BulkLoader();
+            bl.arquivocsv(lista);
 
             //Imprime os dados da planilha
             for (UserxPerfil u : lista) {

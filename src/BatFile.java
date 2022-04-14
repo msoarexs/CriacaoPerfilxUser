@@ -8,10 +8,10 @@ public class BatFile {
 
 
     public void writeFile(List<UserxPerfil> listas) {
-        String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\etautil.csv";
+        String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\etautil.bat";
         try (BufferedWriter br = new BufferedWriter(new FileWriter(arquivo))) {
             for (UserxPerfil u : listas) {
-                arquivo = "C:\\Users\\Mateus Soare\\Desktop\\PerfilVsUsers_etautil.csv";
+                //arquivo = "C:\\Users\\Mateus Soare\\Desktop\\PerfilVsUsers_etautil.csv";
                 br.write("etautil -d im -u etaadmin -p CAIMAG1 -DYN update 'eTGlobalUserContainerName=Global " +
                         "Users,eTNamespaceName=CommonObjects,dc=im,dc=eta' eTGlobalUser eTGlobalUserName='" + u.getLogin() +
                         "' to +eTRoleDN='eTRoleName=" + u.getRole() + ",eTRoleContainerName=Roles,eTNamespaceName=CommonObjects,dc=im'" + "\n");
