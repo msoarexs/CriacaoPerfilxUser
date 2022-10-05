@@ -4,10 +4,14 @@ import java.util.*;
 
 public class MainClass extends UserxPerfil {
 
+    public MainClass(String login, String role) {
+        super(login, role);
+    }
+
     public static void main(String[] args) {
 
         //Local de arquivo para uma variavel
-        String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\PerfilVsUsersTest - Copia.csv";
+        String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\carga se suite.csv";
 
         //Arraylist Criando a lista
         List<UserxPerfil> lista = new ArrayList<UserxPerfil>();
@@ -19,9 +23,9 @@ public class MainClass extends UserxPerfil {
             //Lendo a planilha e separando Nome de Role
             while (linha != null) {
                 String[] vetor = linha.split(",");
-                String nome = vetor[0];                         //Separa o login das roles
-                nome = nome.replace(" ", "."); //Trata os dados criando um login
+                String nome = vetor[0];                         //Separa o login das roles;
                 String perfil = vetor[1];                       //Separa o login das roles
+
 
                 UserxPerfil dados = new UserxPerfil(nome, perfil);
 
@@ -31,8 +35,10 @@ public class MainClass extends UserxPerfil {
             //Cria o arquivo bat para a carga de User x Perfil
             BatFile esc = new BatFile();
             esc.writeFile(lista);
-            BulkLoader bl = new BulkLoader();
-            bl.arquivocsv(lista);
+            //System.out.println("teste");
+            //BulkLoader bl = new BulkLoader();
+            //bl.arquivocsv(lista);
+
 
             //Imprime os dados da planilha
             for (UserxPerfil u : lista) {

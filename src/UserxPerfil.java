@@ -5,16 +5,17 @@ public class UserxPerfil extends Throwable implements Serializable {
 
     private String login;
     private String role;
+    private String uid;
+    private String nome_ges;
+    private String matricula;
+    private String neg;
 
-    public UserxPerfil(){
-
-    }
 
     public UserxPerfil(String login, String role) {
         this.login = login;
         this.role = role;
-    }
 
+    }
     public String getLogin() {
         return login;
     }
@@ -33,6 +34,9 @@ public class UserxPerfil extends Throwable implements Serializable {
 
     @Override
     public String toString() {
-        return "LOGIN='" + login + '\'' + ", ROLE='" + role + '\'' ;
+        return "UserxPerfil{" +
+                "login='" + login + '\'' +
+                ", role='" + role + '\'' +
+                '}';
     }
 }
