@@ -1,5 +1,7 @@
 import java.io.Serializable;
 
+//User x Perfil
+
 public class UserxPerfil extends Throwable implements Serializable {
     private static final long serialVersionUID = 1L;
 

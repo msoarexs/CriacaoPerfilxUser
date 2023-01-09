@@ -16,7 +16,7 @@ public class MainClass extends UserxPerfil {
       Na Classe "BatFile" Altere também a "String Arquivo" que será o local onde o arquivo de carga será criado.
      */
 
-        //Local do arquivo que será lido.
+        //Local do arquivo que será lido
         String arquivo = "C:\\Users\\Mateus Soare\\Desktop\\CARGA - Usuários.csv";
 
         //Arraylist Criando a lista

@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+//Bat
 
 public class BatFile {
     //Puxando os dados pegos no arquivo e colocando no formato ETAUTIL
